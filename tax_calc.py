@@ -1,5 +1,6 @@
 nombre = input("Entrer le montant: \033[94m")
-if type(nombre) != int or float:
+if not nombre.isdigit():
+#if type(nombre) != int or float:
     print("\033[0mMerci d'entrer un nombre")
 else:
     nombre = float(nombre)
