@@ -1,6 +1,4 @@
 from pendu_var import *
-from pendu import *
-from colors import bcolors
 import os
 import platform
 
@@ -11,7 +9,7 @@ def lettre_devi_fc(letter):
     lettre_devi.append(letter)
     update_interface
 
-def update_interface(word):
+def update_interface(word, custom, string):
     clear_all()
     lettre_devi_str = ""
     for i in lettre_devi:
@@ -22,4 +20,8 @@ def update_interface(word):
     print(separator)
     print(f"Le mot: {no_letter * len(word)}")
     print(separator)
-    test_letter = input(">> Tester une lettre: ")
+    if custom:
+        test_letter = input(string)
+    else:
+        test_letter = input(">> Tester une lettre: ")
+    return test_letter
