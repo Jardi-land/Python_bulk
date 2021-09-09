@@ -60,11 +60,8 @@ def is_only_letter(test_letter, word, no_letter, hangphase):
                 else:
                     clear_all()
             else:
-        print("Ok")
-
-def cycle_letter(word, custom, string):
-    test_letter = update_interface(word, custom, string)
-    is_only_letter(test_letter, word)
+                lettre_devi.append(test_letter.upper())
+                cycle_letter(word, False, None, no_letter, hangphase)
 
 def word_check(word):
     if len(word) < 1:
