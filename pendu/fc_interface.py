@@ -13,7 +13,7 @@ def lettre_devi_fc(letter, word):
     except:
         return False
 
-def update_interface(word, custom, string):
+def update_interface(word, custom, string, no_letter, hangphase):
     clear_all()
     lettre_devi_str = ""
     lettre_good_str = ""
