@@ -1,4 +1,5 @@
 from pendu_var import *
+from colors import bcolors
 import os
 import platform
 
