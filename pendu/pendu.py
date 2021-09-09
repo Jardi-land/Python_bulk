@@ -1,7 +1,8 @@
 from colors import bcolors
 from pendu_var import *
 from fc_interface import *
-import time
+
+hangphase = 0
 
 def has_numbers(string):
     return any(char.isdigit() for char in string)
