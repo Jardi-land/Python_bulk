@@ -26,7 +26,7 @@ def word_check(word):
         else:
             clear_all()
             word = word.upper()
-            
+            update_interface()
 
 
 def ask_word():
