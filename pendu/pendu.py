@@ -1,10 +1,6 @@
 from colors import bcolors
-from pendu_var import os_cmd, special_characters
-import os
-import platform
-
-def clear_all():
-    os.system(f'cmd /c {os_cmd[os_cmd.index(platform.system()) + 1]}')
+from pendu_var import *
+from fc_interface import *
 
 def has_numbers(string):
     return any(char.isdigit() for char in string)
