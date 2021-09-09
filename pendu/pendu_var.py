@@ -4,6 +4,8 @@ special_characters = '"!@#$%^&*()-+?_=,<>/"'
 
 lettre_devi = []
 
+lettre_good = []
+
 no_letter = "_ "
 
 hangphase = 0
