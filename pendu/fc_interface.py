@@ -6,7 +6,7 @@ import platform
 def clear_all():
     os.system(f'cmd /c {os_cmd[os_cmd.index(platform.system()) + 1]}')
 
-def lettre_devi_fc(letter, word):
+def letter_devi_fc(letter, word):
     try:
         word.index(letter)
         return True
@@ -15,13 +15,13 @@ def lettre_devi_fc(letter, word):
 
 def update_interface(word, custom, string, no_letter, hangphase):
     clear_all()
-    lettre_devi_str = ""
+    letter_devi_str = ""
     no_letter_str = ""
-    for i in lettre_devi:
-        lettre_devi_str = f"{i} {lettre_devi_str}"
+    for i in letter_devi:
+        letter_devi_str = f"{i} {letter_devi_str}"
     for i in no_letter:
         no_letter_str = f"{no_letter_str} {i}"
-    print(f"Lettre(s) en trop: {lettre_devi_str}")
+    print(f"Lettre(s) en trop: {letter_devi_str}")
     print(separator)
     print(hang[hangphase])
     print(separator)
@@ -59,7 +59,7 @@ def ask_replay(word, hangphase, no_letter, colors, function):
 
 def game_over(word, hangphase, no_letter):
     clear_all()
-    lettre_devi_str = ""
+    letter_devi_str = ""
     word_str = ""
     for i in word:
         word_str = f"{word_str}{i}"
@@ -73,7 +73,7 @@ def game_over(word, hangphase, no_letter):
 
 def win(word, hangphase, no_letter):
     clear_all()
-    lettre_devi_str = ""
+    letter_devi_str = ""
     word_str = ""
     for i in word:
         word_str = f"{word_str}{i}"

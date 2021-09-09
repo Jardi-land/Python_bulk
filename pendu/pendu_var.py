@@ -2,9 +2,9 @@ os_cmd = ["Windows", "cls", "macOS", "clear", "Linux", "clear"]
 
 special_characters = '"!@#$%^&*()-' + "'" + '+?_=,<>\/"'
 
-lettre_devi = []
+letter_devi = []
 
-lettre_good = []
+letter_good = []
 
 separator = "----------------------------------------"
 
