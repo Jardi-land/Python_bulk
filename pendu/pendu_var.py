@@ -5,3 +5,9 @@ special_characters = '"!@#$%^&*()-+?_=,<>/"'
 lettre_devi = []
 
 no_letter = "_ "
+
+hangphase = 0
+
+separator = "----------------------------------------"
+
+hang = ["\n\n\n\n\n=========", "     |\n     |\n     |\n     |\n     |\n=========", " +---+\n |   |\n     |\n     |\n     |\n     |\n========="]
