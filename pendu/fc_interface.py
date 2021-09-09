@@ -16,16 +16,16 @@ def lettre_devi_fc(letter, word):
 def update_interface(word, custom, string, no_letter, hangphase):
     clear_all()
     lettre_devi_str = ""
-    lettre_good_str = ""
+    no_letter_str = ""
     for i in lettre_devi:
         lettre_devi_str = f"{i} {lettre_devi_str}"
-    for i in lettre_good:
-        lettre_good_str = f"{i} {lettre_good}"
-    print(f"Lettre(s) en trop: {lettre_devi_str}{no_letter * (9 - len(lettre_devi))}")
+    for i in no_letter:
+        no_letter_str = f"{no_letter_str} {i}"
+    print(f"Lettre(s) en trop: {lettre_devi_str}")
     print(separator)
     print(hang[hangphase])
     print(separator)
-    print(f"Le mot: {no_letter * len(word)}")
+    print(f"Le mot: {no_letter_str}")
     print(separator)
     if custom:
         test_letter = input(string)
