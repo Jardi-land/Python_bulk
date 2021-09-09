@@ -48,9 +48,13 @@ def word_check(word):
             ask_word()
         else:
             clear_all()
-            word = word.upper()
-            cycle_letter(word, False, None)
-            
+            no_letter = []
+            word = [char for char in word.upper()]
+            for i in word:
+                no_letter.append("_")
+            for i in range(len(word)):
+                lettre_good.insert(i, "_")
+            cycle_letter(word, False, None, no_letter, hangphase)
 
 def ask_word():
     word = input(">> Quelle mot voulez vous faire deviner: ")
