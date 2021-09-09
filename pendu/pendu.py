@@ -7,7 +7,11 @@ hangphase = 0
 def has_numbers(string):
     return any(char.isdigit() for char in string)
 
-def is_only_letter(test_letter, word):
+def cycle_letter(word, custom, string, no_letter, hangphase):
+    test_letter = update_interface(word, custom, string, no_letter, hangphase)
+    is_only_letter(test_letter, word, no_letter, hangphase)
+
+def is_only_letter(test_letter, word, no_letter, hangphase):
     clear_all()
     if len(test_letter) < 1:
         cycle_letter(word, True, f">> {bcolors.FAIL}Merci d'indiquer une lettre: {bcolors.ENDC}")
