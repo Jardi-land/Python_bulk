@@ -1,6 +1,6 @@
 os_cmd = ["Windows", "cls", "macOS", "clear", "Linux", "reset"]
 
-special_characters = '"!@#$%^&*()-+?_=,<>/"'
+special_characters = '"!@#$%^&*()-' + "'" + '+?_=,<>\/"'
 
 lettre_devi = []
 
