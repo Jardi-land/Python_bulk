@@ -1,9 +1,27 @@
 from colors import bcolors
 from pendu_var import *
 from fc_interface import *
+import time
 
 def has_numbers(string):
     return any(char.isdigit() for char in string)
+
+def is_only_letter(test_letter, word):
+    clear_all()
+    if len(test_letter) < 1:
+        cycle_letter(word, True, f">> {bcolors.FAIL}Merci d'indiquer une lettre: {bcolors.ENDC}")
+    elif has_numbers(test_letter):
+        cycle_letter(word, True, f">> {bcolors.FAIL}Merci de mettre une lettre et non un nombre: {bcolors.ENDC}")
+    elif len(test_letter) > 1:
+        cycle_letter(word, True, f">> {bcolors.FAIL}Merci de mettre une seule lettre: {bcolors.ENDC}")
+    elif any(char in special_characters for char in test_letter):
+        cycle_letter(word, True, f">> {bcolors.FAIL}Merci de mettre une lettre et non un caractère spécial{bcolors.ENDC}")
+    else:
+        print("Ok")
+
+def cycle_letter(word, custom, string):
+    test_letter = update_interface(word, custom, string)
+    is_only_letter(test_letter, word)
 
 def word_check(word):
     if len(word) < 1:
@@ -26,8 +44,8 @@ def word_check(word):
         else:
             clear_all()
             word = word.upper()
-            update_interface()
-
+            cycle_letter(word, False, None)
+            
 
 def ask_word():
     word = input(">> Quelle mot voulez vous faire deviner: ")
