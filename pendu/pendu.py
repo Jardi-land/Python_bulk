@@ -10,7 +10,11 @@ def has_numbers(string):
     return any(char.isdigit() for char in string)
 
 def word_check(word):
-    if has_numbers(word):
+    if len(word) < 1:
+        clear_all()
+        print(f"{bcolors.FAIL}Merci d'indiquer un mot{bcolors.ENDC}")
+        ask_word()
+    elif has_numbers(word):
         clear_all()
         print(f"{bcolors.FAIL}Merci de ne pas mettre de nombre dans le mot{bcolors.ENDC}")
         ask_word()
@@ -23,6 +27,10 @@ def word_check(word):
             clear_all()
             print(f"{bcolors.FAIL}Merci de ne pas mettre de caractères spéciaux dans le mot{bcolors.ENDC}")
             ask_word()
+        else:
+            clear_all()
+            word = word.upper()
+            
 
 
 def ask_word():
