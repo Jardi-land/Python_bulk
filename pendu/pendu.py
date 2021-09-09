@@ -14,11 +14,11 @@ def cycle_letter(word, custom, string, no_letter, hangphase):
 def is_only_letter(test_letter, word, no_letter, hangphase):
     clear_all()
     if len(test_letter) < 1:
-        cycle_letter(word, True, f">> {bcolors.FAIL}Merci d'indiquer une lettre: {bcolors.ENDC}")
+        cycle_letter(word, True, f">> {bcolors.FAIL}Merci d'indiquer une lettre: {bcolors.ENDC}", no_letter, hangphase)
     elif has_numbers(test_letter):
-        cycle_letter(word, True, f">> {bcolors.FAIL}Merci de mettre une lettre et non un nombre: {bcolors.ENDC}")
+        cycle_letter(word, True, f">> {bcolors.FAIL}Merci de mettre une lettre et non un nombre: {bcolors.ENDC}", no_letter, hangphase)
     elif len(test_letter) > 1:
-        cycle_letter(word, True, f">> {bcolors.FAIL}Merci de mettre une seule lettre: {bcolors.ENDC}")
+        cycle_letter(word, True, f">> {bcolors.FAIL}Merci de mettre une seule lettre: {bcolors.ENDC}", no_letter, hangphase)
     elif any(char in special_characters for char in test_letter):
         cycle_letter(word, True, f">> {bcolors.FAIL}Merci de mettre une lettre et non un caractère spécial{bcolors.ENDC}")
     else:
