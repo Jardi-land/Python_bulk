@@ -20,8 +20,46 @@ def is_only_letter(test_letter, word, no_letter, hangphase):
     elif len(test_letter) > 1:
         cycle_letter(word, True, f">> {bcolors.FAIL}Merci de mettre une seule lettre: {bcolors.ENDC}", no_letter, hangphase)
     elif any(char in special_characters for char in test_letter):
-        cycle_letter(word, True, f">> {bcolors.FAIL}Merci de mettre une lettre et non un caractère spécial{bcolors.ENDC}")
+        cycle_letter(word, True, f">> {bcolors.FAIL}Merci de mettre une lettre et non un caractère spécial: {bcolors.ENDC}", no_letter, hangphase)
+    elif lettre_devi.count(test_letter.upper()) == 1:
+        cycle_letter(word, True, f">> {bcolors.FAIL}Vous avez déjà essayé cette lettre: {bcolors.ENDC}", no_letter, hangphase)
+    elif lettre_good.count(test_letter.upper()) == 1:
+        cycle_letter(word, True, f">> {bcolors.FAIL}Vous avez déjà essayé cette lettre: {bcolors.ENDC}", no_letter, hangphase)
     else:
+        is_in_list = lettre_devi_fc(test_letter.upper(), word)
+        if is_in_list:
+            for i in range(word.count(test_letter.upper())):
+                if i > 0:
+                    insert_pos = word.index(test_letter.upper(), last_pos)
+                else:
+                    insert_pos = word.index(test_letter.upper())
+                no_letter.pop(insert_pos)
+                no_letter.insert(insert_pos, test_letter.upper())
+                last_pos = insert_pos + 1
+            lettre_good.append(test_letter.upper())
+            if word == no_letter:
+                want_replay = win(word, hangphase, no_letter)
+                if want_replay:
+                    clear_all()
+                    lettre_devi.clear()
+                    lettre_good.clear()
+                    ask_word()
+                else:
+                    clear_all()
+            else:
+                cycle_letter(word, False, None, no_letter, hangphase)
+        else:
+            hangphase = hangphase + 1
+            if hangphase == 8:
+                want_replay = game_over(word, hangphase, no_letter)
+                if want_replay:
+                    clear_all()
+                    lettre_devi.clear()
+                    lettre_good.clear()
+                    ask_word()
+                else:
+                    clear_all()
+            else:
         print("Ok")
 
 def cycle_letter(word, custom, string):
