@@ -1,4 +1,4 @@
-os_cmd = ["Windows", "cls", "macOS", "clear", "Linux", "reset"]
+os_cmd = ["Windows", "cls", "macOS", "clear", "Linux", "clear"]
 
 special_characters = '"!@#$%^&*()-' + "'" + '+?_=,<>\/"'
 
