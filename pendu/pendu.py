@@ -193,7 +193,7 @@ Merci de ne pas mettre de caractères spéciaux dans le mot\
         else:
             clear_all()
             no_letter = []
-            word = [char for char in word.upper()]
+            word = list(word.upper())
             for i in word:
                 no_letter.append("_")
             for i in range(len(word)):
