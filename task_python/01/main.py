@@ -14,7 +14,7 @@ def ask_number():
         print(f"{bcolors.FAIL}Merci de mettre un nombre !")
         ask_number()
     else:
-        calc(a)
+        calc(int(a))
 
 clear_all()
 ask_number()
