@@ -11,7 +11,7 @@ def ask_number():
     a = input("Ton nombre: ")
     if not a.isdigit():
         clear_all()
-        print(f"{bcolors.FAIL}Merci de mettre un nombre !")
+        print(f"{bcolors.FAIL}Merci de mettre un nombre !{bcolors.ENDC}")
         ask_number()
     else:
         calc(int(a))
