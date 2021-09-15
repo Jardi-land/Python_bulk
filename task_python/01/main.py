@@ -7,6 +7,11 @@ os_cmd = ["Windows", "cls", "macOS", "clear", "Linux", "clear"]
 def clear_all():
     os.system(f"{os_cmd[os_cmd.index(platform.system()) + 1]}")
 
+def calc(a):
+    b = a + 2
+    c = b * 2
+    print(c)
+
 def ask_number():
     a = input("Ton nombre: ")
     if not a.isdigit():
