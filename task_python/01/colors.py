@@ -1,4 +1,14 @@
-class bcolors:
+"""
+Colors module
+
+author: Lorenzo De Zen
+"""
+
+class Bcolors:
+    """
+    Desc:
+        All the color code
+    """
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKCYAN = '\033[96m'
