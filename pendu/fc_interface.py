@@ -4,7 +4,10 @@ import os
 import platform
 
 def clear_all():
-    os.system(f'cmd /c {os_cmd[os_cmd.index(platform.system()) + 1]}')
+    if platform.system() == "Windows":
+        os.system(f'cmd /c {os_cmd[os_cmd.index(platform.system()) + 1]}')
+    else:
+        os.system(f'{os_cmd[os_cmd.index(platform.system()) + 1]}')
 
 def letter_devi_fc(letter, word):
     try:
